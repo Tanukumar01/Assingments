@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome To OMVAD Group !</h1>
+    <p id="welcome-message">You have successfully logged in.</p>
+    <button id="logout-btn">Logout</button>
+  </div>
+
+  
+  <script>
+    
+    const token = localStorage.getItem('token');
+    if (!token) {
+      window.location.href = '/';
+    }
+    document.getElementById('logout-btn').onclick = function() {
+      localStorage.removeItem('token');
+      window.location.href = '/';
+    };
+  </script>
+</body>
+</html> 
